@@ -9,20 +9,20 @@
 <body>
     <form action="">
         <label for="city-name">City Name</label><br>
-        <input type="text" id="city-name" placeholder="enter the city name">
+        <input type="text" id="city-name" placeholder="enter city name" class="input" required>
 
-        <button type="submit" id="submit-city">Submit</button>
+        <button type="submit" id="submit-city" class="input">Submit</button>
     </form>
     <div class="display-card">
         <div class="weather-card">
-            <img src='1.png'>
-            <h1 class="weather-temp">21 C</h1>
-            <h3 class="weather-city">Sirsa</h3>
-            <div class="details-container">
+            <img src=#>
+            <h1 class="weather-temp" style="font-size: 50px">21 C</h1>
+            <h3 class="weather-city" style="font-size: 30px">Sirsa</h3>
+            <div class="details-container" style="padding-bottom: 20px">
                 <div class="humidity-details">
                     <i class="fa-solid fa-droplet"></i>
                     <div class="humidity-box">
-                        <span class="humidity-num">28%</span>
+                        <span class="humidity-num"></span>
                         <span>Humidity</span>
                     </div>
                     
@@ -33,7 +33,6 @@
                         <span class="wind-num">18.12</span>
                         <span>Wind Speed</span>
                     </div>
-                    
                 </div>
             </div>
         </div>

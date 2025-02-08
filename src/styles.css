@@ -1,23 +1,29 @@
 *{
     text-align: center;
+    
 }
+body{
+    background-image: url("4.jpeg");
+    background-size: cover;
+}
+
 
 .weather-card{
     height: 65vh;
     width: 40vh;
-    background-color: rgba(43, 3, 111, 0.773);
-    border: 2px solid black;
+    border: 2px solid white;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: white;
+    display: none;
 }
 
 img{
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
 }
 
 .display-card{
@@ -25,4 +31,96 @@ img{
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+.humidity-details, .wind-details{
+    display: flex;
+    gap: 20px;
+    justify-content: left;
+    align-items: center;
+    padding-left: 20px;
+}
+
+i{
+    height: 30px;
+    width: 10px;
+}
+
+.input{
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.details-container{
+    padding-bottom: 100px;
+}
+
+/* Toggle switch container */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide the default checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider (switch button) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+/* Round switch handle */
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* Move the handle to the right when checked */
+input:checked + .slider::before {
+    transform: translateX(26px);
+}
+
+/* Change background color when checked */
+input:checked + .slider {
+    background-color: #3498db;
+}
+
+/* Temperature unit inside the switch */
+.temp-unit {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    transition: 0.4s;
+}
+
+/* Move text when toggled */
+input:checked + .slider .temp-unit {
+    left: 34px;
+    content: "°F";
 }

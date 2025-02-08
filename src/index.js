@@ -6,12 +6,16 @@ let wind
 let icon 
 let city
 
+const card = document.querySelector('.weather-card')
 const cityInput = document.querySelector('#city-name')
 const citySubmit = document.querySelector('#submit-city')
 
 citySubmit.addEventListener('click', (e) => {
     e.preventDefault();
-    city = cityInput.value;
+    if (!cityInput.value.trim()) return
+
+    card.style.display = 'block'
+    city = cityInput.value.trim();
 
     const API_KEY = "9e7b5d8533886ac12abc5583e665ce32"
     const API_QUERY = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}` 
@@ -35,11 +39,12 @@ citySubmit.addEventListener('click', (e) => {
 
     async function main() {
         await getWeather(); // Wait for weather data to load
-        weatherTemp.innerHTML = temperature
+        weatherTemp.innerHTML = `${(temperature - 273.15).toFixed(0)}°C`
         weatherHumidity.innerHTML = `${humidity}%`
         weatherWind.innerHTML = `${wind} km/h`
-        weatherIcon.innerHTML = icon
         weatherCity.innerHTML = city
+        weatherIcon.src = `https://openweathermap.org/img/wn/${icon}.png`
+
     }
 
     main();
